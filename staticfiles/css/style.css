@@ -1,0 +1,61 @@
+/* Сброс стилей */
+* {
+    box-sizing: border-box; /* Устанавливает box-sizing для всех элементов */
+    margin: 0; /* Убирает отступы по умолчанию */
+    padding: 0; /* Убирает внутренние отступы по умолчанию */
+}
+/* Основные стили для html и body */
+html, body {
+    height: 100%; /* Устанавливает высоту html и body на 100% */
+    width: 100%; /* Устанавливает ширину на 100% */
+}
+/* Стили для body */
+body {
+    background-image: url('/static/image/background_1.jpg'); /* Фоновое изображение */
+    background-size: cover; /* Растягивает изображение, чтобы покрыть весь элемент */
+    background-position: center; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Убирает повторение изображения */
+    display: flex; /* Использует flexbox для расположения элементов */
+    flex-direction: column; /* Располагает элементы по вертикали */
+}
+/* Стили для основного содержимого */
+main {
+    flex: 1; /* Позволяет основному содержимому занимать оставшееся пространство */
+    padding: 20px; /* Отступы внутри основного содержимого */
+    color: #fff; /* Цвет текста */
+    text-align: center; /* Центрирует текст */
+}
+
+
+/* Стили для подвала шапки */
+
+header, footer {
+    width: 100%; /* Занимает всю ширину экрана */
+    background-color: orangered;
+    padding: 10px;
+}
+nav {
+    width: 100%; /* Контейнер навигации также на 100% */
+}
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; /* Равномерно распределяет элементы */
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Занимает всю ширину родительского контейнера */
+}
+nav li {
+    flex: 1; /* Каждый элемент списка занимает равное пространство */
+    text-align: center; /* Центрируем текст внутри элементов */
+}
+
+nav a {
+    text-decoration: none; /* Убирает подчеркивание у ссылок */
+    color: black; /* Цвет текста */
+    padding: 10px; /* Отступы вокруг текста */
+    font-weight: bold; /* Жирный шрифт */
+}
+nav a:hover {
+    color: #ffcc00; /* Цвет текста при наведении */
+}
