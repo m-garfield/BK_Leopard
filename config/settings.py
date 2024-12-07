@@ -23,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DB_NAME')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
 
 
 # Application definition
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +86,7 @@ DATABASES = {
         'USER': os.getenv('DB_USER'),  # Имя пользователя
         'PASSWORD': os.getenv('DB_PASSWORD'),  # Пароль
         'HOST': os.getenv('DB_HOST', default='localhost'),  # Хост
-        'PORT': os.getenv('DB_PORT', default='5432'),  # Порт
+        'PORT': os.getenv('DB_PORT', default='5433'),  # Порт
     }
 
 }
@@ -132,3 +134,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/')]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+load_dotenv()
+print ( "!!!!!!!!!!!!!!!!!!!!!=  " + os.getenv("DB_NAME"))

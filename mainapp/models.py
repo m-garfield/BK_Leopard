@@ -17,3 +17,13 @@ class Joint_training(models.Model):
     trenning = models.CharField(max_length=150, blank=True, null=True)
     def __str__(self):
         return f'{self.get_day_display()} - Задачи: {self.tasks}'
+
+class Events(models.Model):
+    date = models.DateField()
+    event = models.CharField()
+    icon = models.ImageField()
+    description = models.CharField()
+
+class Galery(models.Model):
+    image = models.ImageField()
+    description = models.CharField()
